@@ -1,6 +1,7 @@
-Fork from [originalankur/maptoposter](https://github.com/originalankur/maptoposter)
+**Fork from [originalankur/maptoposter](https://github.com/originalankur/maptoposter)**
 
-Key Modifications:
+**Key Modifications:**
+
 • Adapted for the Chinese network environment: Directly uses latitude/longitude coordinates to bypass the unreachable Nominatim geocoding service.
 
 • Chinese localization: Pre-configured examples for Chengdu and other Chinese cities, with built-in support for the Noto Sans SC font.
@@ -38,7 +39,7 @@ python create_map_poster.py --city "Seoul" --country "South Korea" --lat 37.5665
 <img width="250" alt="seoul_noir_20260517_192428" src="https://github.com/user-attachments/assets/c6de598a-c676-43f5-bab1-4408bd4a5d52" />
 
 
-**1**We can add a judgment near the get_coordinates() function to completely resolve network issues.
+**1**. We can add a judgment near the get_coordinates() function to completely resolve network issues.
 As long as latitude and longitude are provided, the program will never access Nominatim, and there is no need to force a city name to be supplied.
 ```bush
 if args.latitude and args.longitude:
@@ -54,7 +55,7 @@ else:
 ```
 
 
-**2**.Original Code:
+**2**. Original Code:
 ```bush
 if args.latitude and args.longitude:
     lat = parse(args.latitude)
@@ -74,7 +75,7 @@ Change it to:
 else:
     coords = get_coordinates(args.city, args.country, args.latitude, args.longitude)
 ```
-**3**.besides I delete the required validity and change it to intelligent judgment
+**3**. besides I delete the required validity and change it to intelligent judgment
 Original code:
 ```bush
 # Validate required arguments
