@@ -2,6 +2,7 @@ Fork from [originalankur/maptoposter](https://github.com/originalankur/maptopost
 
 Key Modifications:
 • Adapted for the Chinese network environment: Directly uses latitude/longitude coordinates to bypass the unreachable Nominatim geocoding service.
+
 • Chinese localization: Pre-configured examples for Chengdu and other Chinese cities, with built-in support for the Noto Sans SC font.
 ```bush
 python create_map_poster.py --city "Chengdu" --country "China"
@@ -19,11 +20,12 @@ python create_map_poster.py --city "Chengdu" --country "China" --lat 30.6598 --l
 | `--font-family "Noto Sans SC"` | Uses a Chinese-compatible font to prevent garbled text. |
 | `-t warm_beige` | Warm beige retro theme with a gentle and cozy vibe. |
 | `-d 12000` | Covers a radius of 12 km, covering the main urban road network of Chengdu. |y
-<img width="3630" height="4830" alt="chengdu_warm_beige_20260517_192142" src="https://github.com/user-attachments/assets/0989a977-7d9c-4173-a17d-b43336a13298" />
+<img height="483" alt="chengdu_warm_beige_20260517_192142" src="https://github.com/user-attachments/assets/0989a977-7d9c-4173-a17d-b43336a13298" />
 ```bush
 #서울
 python create_map_poster.py --city "Seoul" --country "South Korea" --lat 37.5665 --long 126.9780 -dc "서울" -dC "대한민국" --font-family "Noto Sans KR" -t noir -d 15000
 ```
+
 | Parameter | Description |
 |:----------|:------------|
 | `--lat 37.5665 --long 126.9780` | Coordinates of central Seoul (near Gyeongbokgung Palace), bypassing external network requests directly. |
@@ -32,7 +34,7 @@ python create_map_poster.py --city "Seoul" --country "South Korea" --lat 37.5665
 | `-t noir` | Pure black minimalist theme, matching the urban style of Seoul. |
 | `-d 15000` | Covers a radius of 15 km, including major road networks and the Han River. |
 
-<img width="3630" height="4830" alt="seoul_noir_20260517_192428" src="https://github.com/user-attachments/assets/c6de598a-c676-43f5-bab1-4408bd4a5d52" />
+<img width="250" alt="seoul_noir_20260517_192428" src="https://github.com/user-attachments/assets/c6de598a-c676-43f5-bab1-4408bd4a5d52" />
 
 
 We can add a judgment near the get_coordinates() function to completely resolve network issues.
@@ -96,9 +98,9 @@ In this way, we can draw anywhere at will without city/country (the picture show
 ```bush
 python create_map_poster.py --lat 27.8940 --long 102.2640 -t warm_beige -d 15000 --display-city "凉山区域" --display-country "中国" --font-family "Noto Sans SC"
 ```
-<img width="1092" height="433" alt="image" src="https://github.com/user-attachments/assets/608a62f2-9947-4fbb-9c24-7d4608e0210c" />
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/608a62f2-9947-4fbb-9c24-7d4608e0210c" />
 
-<img width="3630" height="4830" alt="27 8940_102 2640_warm_beige_20260517_212519" src="https://github.com/user-attachments/assets/ec654fb6-521c-4bad-bec6-63528648d6c1" />
+<img width="250" alt="27 8940_102 2640_warm_beige_20260517_212519" src="https://github.com/user-attachments/assets/ec654fb6-521c-4bad-bec6-63528648d6c1" />
 
 ---
 **Acknowledgments**: Thanks to [originalankur](https://github.com/originalankur) for the base project, and to OpenStreetMap contributors for map data. MIT License.
