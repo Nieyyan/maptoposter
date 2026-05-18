@@ -6,7 +6,7 @@ To solve this problem, I modified the core logic to support direct latitude/long
 ```bush
 python create_map_poster.py --city "Chengdu" --country "China"
 ```
-<img width="1126" height="749" alt="image" src="https://github.com/user-attachments/assets/bfd1dffc-2f42-426d-a72b-e956c66b7232" />
+<img width="500"  alt="image" src="https://github.com/user-attachments/assets/bfd1dffc-2f42-426d-a72b-e956c66b7232" />
 
 **Key Modifications:**
 
@@ -117,20 +117,21 @@ if not args.country and args.latitude and args.longitude:
 ```bush
 python create_map_poster.py --lat 27.8940 --long 102.2640 -t warm_beige -d 15000 --display-city "凉山区域" --display-country "中国" --font-family "Noto Sans SC"
 ```
-<img width="2000" alt="image" src="https://github.com/user-attachments/assets/608a62f2-9947-4fbb-9c24-7d4608e0210c" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/608a62f2-9947-4fbb-9c24-7d4608e0210c" />
 
 <img width="250" alt="27 8940_102 2640_warm_beige_20260517_212519" src="https://github.com/user-attachments/assets/ec654fb6-521c-4bad-bec6-63528648d6c1" />
 
 Take my hometown as an example. There are fewer roads in rural areas, so the generated images may not look very beautiful. For this reason, we can expand the scope. Maps can still be generated even without specifying cities or countries, using only latitude and longitude coordinates.
 
-<img width="1046" height="390" alt="image" src="https://github.com/user-attachments/assets/67377767-4d36-4214-97d1-58134e41d4a9" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/67377767-4d36-4214-97d1-58134e41d4a9" />
+
+It can run with only latitude and longitude entered.
 
 ```bush
 python create_map_poster.py --lat 28.983234 --long 105.092062 -t midnight_blue -d 30000 --display-city "MY HOMETWON" --display-country "China"
 ```
 
 <img width="250" alt="28 983234_105 092062_midnight_blue_20260518_092354" src="https://github.com/user-attachments/assets/150fda5f-5542-4546-b50b-28616b6a2bc1" />
-
 
 ---
 **Acknowledgments**: Thanks to [originalankur](https://github.com/originalankur) for the base project, and to OpenStreetMap contributors for map data. MIT License.
