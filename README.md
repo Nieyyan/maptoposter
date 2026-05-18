@@ -3,6 +3,11 @@
 I encountered frequent timeouts when using the original project due to unstable network access to the Nominatim service in China. 
 To solve this problem, I modified the core logic to support direct latitude/longitude input, making the tool usable globally without relying on external geocoding services.
 
+```bush
+python create_map_poster.py --city "Chengdu" --country "China"
+```
+<img width="1126" height="749" alt="image" src="https://github.com/user-attachments/assets/bfd1dffc-2f42-426d-a72b-e956c66b7232" />
+
 **Key Modifications:**
 
 • Adapted for the Chinese network environment: Directly uses latitude/longitude coordinates to bypass the unreachable Nominatim geocoding service.
@@ -12,11 +17,6 @@ To solve this problem, I modified the core logic to support direct latitude/long
 •Global coordinate freedom: This optimized version breaks the limit of city names. 
 With only a pair of latitude and longitude, posters can be generated for **any location around the world**, including remote mountains, wilderness and uninhabited areas.
 
-
-```bush
-python create_map_poster.py --city "Chengdu" --country "China"
-```
-<img width="1126" height="749" alt="image" src="https://github.com/user-attachments/assets/bfd1dffc-2f42-426d-a72b-e956c66b7232" />
 
 ```bush
 # 成都
@@ -129,7 +129,7 @@ Take my hometown as an example. There are fewer roads in rural areas, so the gen
 python create_map_poster.py --lat 28.983234 --long 105.092062 -t midnight_blue -d 30000 --display-city "MY HOMETWON" --display-country "China"
 ```
 
-<img width="3630" height="4830" alt="28 983234_105 092062_midnight_blue_20260518_092354" src="https://github.com/user-attachments/assets/150fda5f-5542-4546-b50b-28616b6a2bc1" />
+<img width="250" alt="28 983234_105 092062_midnight_blue_20260518_092354" src="https://github.com/user-attachments/assets/150fda5f-5542-4546-b50b-28616b6a2bc1" />
 
 
 ---
