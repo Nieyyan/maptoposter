@@ -113,7 +113,7 @@ if not args.country and args.latitude and args.longitude:
     args.country = "Unknown"
 ```
 
-**In this way, we can draw anywhere at will without city/country** (the picture shows the mountainous areas in western China)
+**In this way, we can draw anywhere at will without city/country** 
 
 ```bush
 python create_map_poster.py --lat 27.8940 --long 102.2640 -t warm_beige -d 15000 --display-city "凉山区域" --display-country "中国" --font-family "Noto Sans SC"
@@ -136,7 +136,7 @@ python create_map_poster.py --lat 28.983234 --long 105.092062 -t midnight_blue -
 
 <img width="250" alt="28 983234_105 092062_midnight_blue_20260518_092354" src="https://github.com/user-attachments/assets/150fda5f-5542-4546-b50b-28616b6a2bc1" />
 
-In addition, map generation is also supported by only providing the city and country names, so relevant demonstrations will be omitted for brevity.
+In addition, map generation is still supported by only providing the city and country names, so relevant demonstrations will be omitted for brevity.
 
 ---
 **Acknowledgments**: Thanks to [originalankur](https://github.com/originalankur) for the base project, and to OpenStreetMap contributors for map data. MIT License.
