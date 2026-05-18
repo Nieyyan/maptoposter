@@ -8,10 +8,12 @@ python create_map_poster.py --city "Chengdu" --country "China"
 ```
 <img width="500"  alt="image" src="https://github.com/user-attachments/assets/bfd1dffc-2f42-426d-a72b-e956c66b7232" />
 
+
 **Key Modifications:**
 - **Network Adaptation**: Directly uses latitude/longitude coordinates to bypass the Nominatim geocoding service (often unreachable in China), ensuring reliable map generation.
 - **CJK Localization**: Pre-configured examples for Chengdu (Chinese) and Seoul (Korean), with built-in support for Noto Sans SC and Noto Sans KR fonts.
 - **Any Location Support**: No need to provide city/country names – just input coordinates, even for villages without names.
+
 
 ```bush
 # 成都
@@ -39,7 +41,7 @@ python create_map_poster.py --city "Seoul" --country "South Korea" --lat 37.5665
 | `-t noir` | Pure black minimalist theme, matching the urban style of Seoul. |
 | `-d 15000` | Covers a radius of 15 km, including major road networks and the Han River. |
 
-<img width="250" alt="seoul_noir_20260517_192428" src="https://github.com/user-attachments/assets/c6de598a-c676-43f5-bab1-4408bd4a5d52" />
+<img width="483" alt="seoul_noir_20260517_192428" src="https://github.com/user-attachments/assets/c6de598a-c676-43f5-bab1-4408bd4a5d52" />
 
 
 **1. We can add a judgment near the get_coordinates() function to completely resolve network issues.
