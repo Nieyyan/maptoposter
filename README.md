@@ -120,6 +120,7 @@ python create_map_poster.py --lat 27.8940 --long 102.2640 -t warm_beige -d 15000
 ```
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/608a62f2-9947-4fbb-9c24-7d4608e0210c" />
 
+(the picture shows the mountainous areas in western China)
 
 <img width="250" alt="27 8940_102 2640_warm_beige_20260517_212519" src="https://github.com/user-attachments/assets/ec654fb6-521c-4bad-bec6-63528648d6c1" />
 
@@ -134,6 +135,8 @@ python create_map_poster.py --lat 28.983234 --long 105.092062 -t midnight_blue -
 ```
 
 <img width="250" alt="28 983234_105 092062_midnight_blue_20260518_092354" src="https://github.com/user-attachments/assets/150fda5f-5542-4546-b50b-28616b6a2bc1" />
+
+In addition, map generation is also supported by only providing the city and country names, so relevant demonstrations will be omitted for brevity.
 
 ---
 **Acknowledgments**: Thanks to [originalankur](https://github.com/originalankur) for the base project, and to OpenStreetMap contributors for map data. MIT License.
