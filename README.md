@@ -9,14 +9,9 @@ python create_map_poster.py --city "Chengdu" --country "China"
 <img width="500"  alt="image" src="https://github.com/user-attachments/assets/bfd1dffc-2f42-426d-a72b-e956c66b7232" />
 
 **Key Modifications:**
-
-• Adapted for the Chinese network environment: Directly uses latitude/longitude coordinates to bypass the unreachable Nominatim geocoding service.
-
-• Chinese localization: Pre-configured examples for Chengdu and other Chinese cities, with built-in support for the Noto Sans SC font.
-
-•Global coordinate freedom: This optimized version breaks the limit of city names. 
-With only a pair of latitude and longitude, posters can be generated for **any location around the world**, including remote mountains, wilderness and uninhabited areas.
-
+- **Network Adaptation**: Directly uses latitude/longitude coordinates to bypass the Nominatim geocoding service (often unreachable in China), ensuring reliable map generation.
+- **CJK Localization**: Pre-configured examples for Chengdu (Chinese) and Seoul (Korean), with built-in support for Noto Sans SC and Noto Sans KR fonts.
+- **Any Location Support**: No need to provide city/country names – just input coordinates, even for villages without names.
 
 ```bush
 # 成都
