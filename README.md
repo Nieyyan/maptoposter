@@ -1,10 +1,18 @@
 **Fork from [originalankur/maptoposter](https://github.com/originalankur/maptoposter)**
 
+I encountered frequent timeouts when using the original project due to unstable network access to the Nominatim service in China. 
+To solve this problem, I modified the core logic to support direct latitude/longitude input, making the tool usable globally without relying on external geocoding services.
+
 **Key Modifications:**
 
 • Adapted for the Chinese network environment: Directly uses latitude/longitude coordinates to bypass the unreachable Nominatim geocoding service.
 
 • Chinese localization: Pre-configured examples for Chengdu and other Chinese cities, with built-in support for the Noto Sans SC font.
+
+•Global coordinate freedom: This optimized version breaks the limit of city names. 
+With only a pair of latitude and longitude, posters can be generated for **any location around the world**, including remote mountains, wilderness and uninhabited areas.
+
+
 ```bush
 python create_map_poster.py --city "Chengdu" --country "China"
 ```
@@ -41,6 +49,7 @@ python create_map_poster.py --city "Seoul" --country "South Korea" --lat 37.5665
 
 **1**. We can add a judgment near the get_coordinates() function to completely resolve network issues.
 As long as latitude and longitude are provided, the program will never access Nominatim, and there is no need to force a city name to be supplied.
+
 ```bush
 if args.latitude and args.longitude:
     coords = (args.latitude, args.longitude)
@@ -56,6 +65,7 @@ else:
 
 
 **2**. Original Code:
+
 ```bush
 if args.latitude and args.longitude:
     lat = parse(args.latitude)
@@ -75,7 +85,9 @@ Change it to:
 else:
     coords = get_coordinates(args.city, args.country, args.latitude, args.longitude)
 ```
+
 **3**. besides I delete the required validity and change it to intelligent judgment
+
 Original code:
 ```bush
 # Validate required arguments
@@ -85,6 +97,7 @@ if not args.city or not args.country:
     sys.exit(1)
 ```
 Change it to:
+
 ```bush
 # Validate required arguments - Only longitude and latitude are allowed to be transmitted.
 if not args.city and not (args.latitude and args.longitude):
@@ -98,7 +111,9 @@ if not args.city and args.latitude and args.longitude:
 if not args.country and args.latitude and args.longitude:
     args.country = "Unknown"
 ```
-In this way, we can draw anywhere at will without city/country (the picture shows the mountainous countryside areas in western China)
+
+**In this way, we can draw anywhere at will without city/country** (the picture shows the mountainous areas in western China)
+
 ```bush
 python create_map_poster.py --lat 27.8940 --long 102.2640 -t warm_beige -d 15000 --display-city "凉山区域" --display-country "中国" --font-family "Noto Sans SC"
 ```
@@ -106,11 +121,22 @@ python create_map_poster.py --lat 27.8940 --long 102.2640 -t warm_beige -d 15000
 
 <img width="250" alt="27 8940_102 2640_warm_beige_20260517_212519" src="https://github.com/user-attachments/assets/ec654fb6-521c-4bad-bec6-63528648d6c1" />
 
+Take my hometown as an example. There are fewer roads in rural areas, so the generated images may not look very beautiful. For this reason, we can expand the scope. Maps can still be generated even without specifying cities or countries, using only latitude and longitude coordinates.
+
+<img width="1046" height="390" alt="image" src="https://github.com/user-attachments/assets/67377767-4d36-4214-97d1-58134e41d4a9" />
+
+```bush
+python create_map_poster.py --lat 28.983234 --long 105.092062 -t midnight_blue -d 30000 --display-city "MY HOMETWON" --display-country "China"
+```
+
+<img width="3630" height="4830" alt="28 983234_105 092062_midnight_blue_20260518_092354" src="https://github.com/user-attachments/assets/150fda5f-5542-4546-b50b-28616b6a2bc1" />
+
+
 ---
 **Acknowledgments**: Thanks to [originalankur](https://github.com/originalankur) for the base project, and to OpenStreetMap contributors for map data. MIT License.
 
 ________________________________________________________________________________________
-**Here is the original content with only some images removed.**
+> The following is the original README content, with some example images removed for brevity.
 
 # City Map Poster Generator
 
