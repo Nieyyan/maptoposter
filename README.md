@@ -47,8 +47,8 @@ python create_map_poster.py --city "Seoul" --country "South Korea" --lat 37.5665
 <img width="250" alt="seoul_noir_20260517_192428" src="https://github.com/user-attachments/assets/c6de598a-c676-43f5-bab1-4408bd4a5d52" />
 
 
-**1**. We can add a judgment near the get_coordinates() function to completely resolve network issues.
-As long as latitude and longitude are provided, the program will never access Nominatim, and there is no need to force a city name to be supplied.
+**1. We can add a judgment near the get_coordinates() function to completely resolve network issues.
+As long as latitude and longitude are provided, the program will never access Nominatim, and there is no need to force a city name to be supplied.**
 
 ```bush
 if args.latitude and args.longitude:
@@ -64,7 +64,8 @@ else:
 ```
 
 
-**2**. Original Code:
+**2**
+ Original Code:
 
 ```bush
 if args.latitude and args.longitude:
@@ -86,7 +87,7 @@ else:
     coords = get_coordinates(args.city, args.country, args.latitude, args.longitude)
 ```
 
-**3**. besides I delete the required validity and change it to intelligent judgment
+**3. besides I delete the required validity and change it to intelligent judgment**
 
 Original code:
 ```bush
@@ -118,6 +119,7 @@ if not args.country and args.latitude and args.longitude:
 python create_map_poster.py --lat 27.8940 --long 102.2640 -t warm_beige -d 15000 --display-city "凉山区域" --display-country "中国" --font-family "Noto Sans SC"
 ```
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/608a62f2-9947-4fbb-9c24-7d4608e0210c" />
+
 
 <img width="250" alt="27 8940_102 2640_warm_beige_20260517_212519" src="https://github.com/user-attachments/assets/ec654fb6-521c-4bad-bec6-63528648d6c1" />
 
